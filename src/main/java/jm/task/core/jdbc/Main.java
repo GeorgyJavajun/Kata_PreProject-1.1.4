@@ -1,12 +1,15 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.util.Util;
+import org.hibernate.SessionFactory;
 
 
 public class Main {
     public static void main(String[] args) {
-        UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
 
+
+//        UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
 //        userDao.createUsersTable();
 //        userDao.saveUser("Ronnie", "Radke", (byte) 38);
 //        userDao.saveUser("Denny", "Worsnop", (byte) 31);
@@ -21,3 +24,4 @@ public class Main {
 
     }
 }
+//CHANGE THE PASSWORD IN PROPERTIES BEFORE PUSH PROJECT!!!
