@@ -1,5 +1,6 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.util.Util;
 import org.hibernate.SessionFactory;
@@ -7,21 +8,27 @@ import org.hibernate.SessionFactory;
 
 public class Main {
     public static void main(String[] args) {
+        UserDaoHibernateImpl udh = new UserDaoHibernateImpl();
 
-
-//        UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
-//        userDao.createUsersTable();
-//        userDao.saveUser("Ronnie", "Radke", (byte) 38);
-//        userDao.saveUser("Denny", "Worsnop", (byte) 31);
-//        userDao.saveUser("Serj", "Tankian", (byte) 45);
-//        userDao.saveUser("Mitch", "Lucker", (byte) 28);
-//        userDao.removeUserById(5);
-//        userDao.getAllUsers().forEach(System.out::println);
-//        userDao.cleanUsersTable();
-//        userDao.dropUsersTable();
-
-
+        udh.createUsersTable();
+        udh.saveUser("Ronnie", "Radke", (byte) 38);
+        udh.saveUser("Denny", "Worsnop", (byte) 31);
+        udh.saveUser("Serj", "Tankian", (byte) 45);
+        udh.saveUser("Mitch", "Lucker", (byte) 28);
+        udh.removeUserById(3);
+        udh.getAllUsers().forEach(System.out::println);
+        udh.cleanUsersTable();
+        udh.dropUsersTable();
 
     }
 }
+
+
+
+
+
+
+
+
+
 //CHANGE THE PASSWORD IN PROPERTIES BEFORE PUSH PROJECT!!!
