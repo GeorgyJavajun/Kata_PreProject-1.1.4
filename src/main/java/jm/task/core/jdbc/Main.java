@@ -22,13 +22,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-//CHANGE THE PASSWORD IN PROPERTIES BEFORE PUSH PROJECT!!!
