@@ -24,7 +24,7 @@ public class UserDaoHibernateImpl implements UserDao {
     private final static String CLEANINGSTR = "TRUNCATE TABLE users";
     private final static String GETINGSTR = "SELECT i FROM User i";
 //    private final static String SAVINGSTR = "INSERT INTO users (Name, Lastname, Age) VALUES (?, ?, ?)";
-    private final static String REMOVINGSTR = "DELETE FROM users WHERE ID = ?";
+    private final static String REMOVINGSTR = "DELETE User WHERE ID = :id";
     private final SessionFactory sessionFactory = Util.getSessionFactory();
 
 
@@ -95,9 +95,7 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             session = sessionFactory.getCurrentSession();
             session.beginTransaction();
-            User user = new User();
-            user.setId(id);
-            session.delete(user);
+            session.createQuery(REMOVINGSTR).setParameter("id", String.valueOf(id)).executeUpdate();
             session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println("Oops, something wrong with removing user");
