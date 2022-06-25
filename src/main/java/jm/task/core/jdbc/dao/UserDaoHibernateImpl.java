@@ -23,7 +23,6 @@ public class UserDaoHibernateImpl implements UserDao {
     private final static String DROPINGSTR = "DROP TABLE IF EXISTS users";
     private final static String CLEANINGSTR = "TRUNCATE TABLE users";
     private final static String GETINGSTR = "SELECT i FROM User i";
-//    private final static String SAVINGSTR = "INSERT INTO users (Name, Lastname, Age) VALUES (?, ?, ?)";
     private final static String REMOVINGSTR = "DELETE User WHERE ID = :id";
     private final SessionFactory sessionFactory = Util.getSessionFactory();
 
